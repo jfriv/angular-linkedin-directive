@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="linkedinExample">
+  <head>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../lib/BrowserUtil.js"></script>
+    <script src="../src/directives/angular-linkedin-login.js"></script>
+    <style>
+        body{
+            font-family:Helvetica, sans-serif;
+        }
+        .container{
+            width:300px;
+            margin:40px auto;
+        }
+        a.button{
+            background: #337DD0;
+            border: 1px solid #1C68BF;
+            border-radius: 5px;
+            color: #FFFFFF;
+            cursor: pointer;
+            font-size: 0.8em;
+            font-weight: bold;
+            height: auto;
+            line-height: 1.5;
+            padding: 1em 2.5em;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: background-color 0.25s ease-out 0s;
+            width: auto;
+            word-wrap: break-word;
+        }
+        
+        .padded{
+            padding:10px;
+        }
+        
+        .align-center{
+            text-align:center;
+        }
+        
+        .loading{
+            width:20px;
+            height:20px;
+            display:inline-block;
+            background-image:url('loading_16x16.gif');
+            background-position:4px 4px;
+            background-repeat:no-repeat;
+        }
+        
+        .loading-wrap{
+            line-height:20px;
+        }
+        
+    </style>
+    <script>
+        var app = angular.module('linkedinExample', ['linkedinExample.directives'])
+            .controller('linkedinExampleCtrl', ['$scope', '$http', 
+        	    function($scope, $http) {
+
+                    $scope.linkedinMsg = {};
+                    $scope.showLinkedinLogin = true;
+                    $scope.showEmailForm = true;
+	                
+	                $scope.linkedinProfileDataCallback = function(data){
+	                    console.log('profileDataCallback',data);
+	                };
+	                
+                }
+            ]);
+    </script>
+  </head>
+  <body ng-controller="linkedinExampleCtrl">
+    <div class="container">
+        <h3>Linkedin Login Directive Example</h3>
+        <div linkedin-login
+            linkedin-button-text="Linkedin Login"
+            linkedin-success-msg="LinkedIn authorized!"
+            linkedin-profile-data="linkedinProfileDataCallback"></div>
+    </div>
+  </body>
+</html>

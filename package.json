@@ -1,0 +1,29 @@
+{
+  "author": "https://github.com/feedthefire/",
+  "name": "angular-linkedin-directive",
+  "description": "angular-linkedin-directive - AngularJS directive integrating with LinkedIn's JS API for login",
+  "version": "0.1.0",
+  "homepage": "https://github.com/feedthefire/angular-linkedin-directive/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/feedthefire/angular-linkedin-directive"
+  },
+  "keywords": [
+    "angularjs",
+    "linkedin"
+  ],
+  "license": "Apache2",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-shell": "*",
+    "grunt-karma": "*",
+    "grunt-contrib-watch": "*",
+    "karma-html2js-preprocessor": "*",
+    "karma-jasmine": "*",
+    "karma-requirejs": "*",
+    "karma-phantomjs-launcher": "*",
+    "karma-coverage": "*",
+    "karma": "*"
+  }
+}
