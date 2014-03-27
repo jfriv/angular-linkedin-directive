@@ -1,7 +1,7 @@
 angular-linkedin-directive
 ==========================
 
-Angular directive for linkedin JS API login
+Angular directive for linkedin JS API login 
 
 Please see the example for usage.  Directive offers two possible callback 
 attributes, one for simple authentication, the other for retrieving the 

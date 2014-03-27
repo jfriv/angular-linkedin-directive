@@ -1,5 +1,4 @@
-angular.module('linkedinExample.directives', [])
-    .directive('linkedinLogin',
+angular.module('linkedinExample').directive('linkedinLogin',
         ['$rootScope', '$interval',
             function ($rootScope, $interval) {
                 return {
@@ -43,7 +42,7 @@ angular.module('linkedinExample.directives', [])
                             var _iOSinterval = null;
                             
                             if(!_authorizedHandler && !_profileDataHandler){
-                                throw "You must provide a 'hb-form-authorize' or 'hb-form-profile-data' on the scope.";
+                                throw "You must provide a 'linkedin-authorize' or 'linkedin-profile-data' on the scope.";
                             }
                             if(_iOS){
                                 // hide linkedin button for iOS because the LinkedIn JS API does not work, argh...

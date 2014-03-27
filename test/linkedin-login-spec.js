@@ -1,4 +1,4 @@
-describe("linkedin-login", function () {
+describe("linkedinLogin", function () {
     var $rootScope,
         $compile,
         $scope,
@@ -9,8 +9,8 @@ describe("linkedin-login", function () {
         INUserAuthorizeSpy,
         INAPIProfileSpy,
         $body = $('body'),
-        fullHtml = '<div hb-linkedin hb-linkedin-button-text="Authorize" hb-linkedin-success-msg="Success!" hb-linkedin-authorized="onAuthorized" hb-linkedin-profile-data="onProfileData"></div>',
-        authOnlyHtml = '<div hb-linkedin hb-linkedin-button-text="Authorize" hb-linkedin-success-msg="Success!" hb-linkedin-authorized="onAuthorized"></div>',
+        fullHtml = '<div linkedin-login linkedin-button-text="Authorize" linkedin-success-msg="Success!" linkedin-authorized="onAuthorized" linkedin-profile-data="onProfileData"></div>',
+        authOnlyHtml = '<div linkedin-login linkedin-button-text="Authorize" linkedin-success-msg="Success!" linkedin-authorized="onAuthorized"></div>',
         linkedinProfileData = {
           "_total": 1,
           "values": [{
@@ -77,8 +77,8 @@ describe("linkedin-login", function () {
     
     beforeEach(function () {
 
-        //Instantiate module with mocks
-        angular.mock.module('hb.core', 'templates');
+        //Instantiate module
+        angular.module('linkedinExample');
 
         inject(function ($injector, _$compile_) {
             $rootScope = $injector.get('$rootScope');
@@ -106,16 +106,16 @@ describe("linkedin-login", function () {
     });
 
     describe("compile time", function () {
-        it("Should throw an error if the element is compiled without an 'hb-form-authorize' or 'hb-form-profile-data' attribute", function () {
+        it("Should throw an error if the element is compiled without an 'linkedin-authorize' or 'linkedin-profile-data' attribute", function () {
             expect(function () {
-                $compile(angular.element('<div hb-linkedin></div>'))($scope);
+                $compile(angular.element('<div linkedin-login></div>'))($scope);
                 $scope.$digest();
             }).toThrow();
         });
         
         it("Should initialize LinkedIn 'IN' on the window object and set linkedinLibInitialized to true",function(){
             expect(getScriptSpy).toHaveBeenCalled();
-            expect(INinitSpy).toHaveBeenCalledWith({ onLoad : 'linkedinLibInit', api_key : 'myLinkedinKey', credentials_cookie : true });
+            expect(INinitSpy).toHaveBeenCalledWith({ onLoad : 'linkedinLibInit', api_key : 'LINKEDIN_API_KEY', credentials_cookie : true });
             expect(window.linkedinLibInit).toBeTruthy();
         });
         

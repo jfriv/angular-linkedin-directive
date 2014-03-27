@@ -4,6 +4,7 @@
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script src="../bower_components/angular/angular.min.js"></script>
     <script src="../lib/BrowserUtil.js"></script>
+    <script src="../src/app.js"></script>
     <script src="../src/directives/angular-linkedin-login.js"></script>
     <style>
         body{
@@ -54,22 +55,6 @@
         }
         
     </style>
-    <script>
-        var app = angular.module('linkedinExample', ['linkedinExample.directives'])
-            .controller('linkedinExampleCtrl', ['$scope', '$http', 
-        	    function($scope, $http) {
-
-                    $scope.linkedinMsg = {};
-                    $scope.showLinkedinLogin = true;
-                    $scope.showEmailForm = true;
-	                
-	                $scope.linkedinProfileDataCallback = function(data){
-	                    console.log('profileDataCallback',data);
-	                };
-	                
-                }
-            ]);
-    </script>
   </head>
   <body ng-controller="linkedinExampleCtrl">
     <div class="container">

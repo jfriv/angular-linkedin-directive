@@ -24,6 +24,8 @@
     "karma-requirejs": "*",
     "karma-phantomjs-launcher": "*",
     "karma-coverage": "*",
-    "karma": "*"
+    "karma": "*",
+    "karma-junit-reporter": "*",
+    "karma-ng-html2js-preprocessor": "*"
   }
 }
