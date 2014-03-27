@@ -23,7 +23,7 @@ angular.module('linkedinExample.directives', [])
                             $.getScript("//platform.linkedin.com/in.js?async=true", function success() {
                                 IN.init({
                                     onLoad: "linkedinLibInit",
-                                    api_key: "5L-GzSuqtGjn6ZPku-Ws5sEZ9yLn_klDG3WPnAW1sTwTG9eeXyMRcKcUu5QlR_VZ",
+                                    api_key: "LINKEDIN_API_KEY",
                                     credentials_cookie: true
                                 });
                             });
