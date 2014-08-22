@@ -23,7 +23,8 @@ angular.module('linkedinExample').directive('linkedinLogin',
                                 IN.init({
                                     onLoad: "linkedinLibInit",
                                     api_key: "LINKEDIN_API_KEY",
-                                    credentials_cookie: true
+                                    credentials_cookie: true,
+                                    scope: "r_fullprofile r_emailaddress"
                                 });
                             });
                 
